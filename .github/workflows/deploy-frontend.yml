@@ -7,7 +7,7 @@ on:
         required: true
       username:
         required: true
-      ssh:
+      key:
         required: true
       passphrase:
         required: true
@@ -27,7 +27,7 @@ jobs:
         with:
           host: ${{ secrets.host }}
           username: ${{ secrets.username }}
-          key: ${{ secrets.ssh }}
+          key: ${{ secrets.key }}
           passphrase: ${{ secrets.passphrase }}
           source: "dist/*"
           target: "frontend/"
