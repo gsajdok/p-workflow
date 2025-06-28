@@ -5,17 +5,12 @@ on:
     secrets:
       host:
         required: true
-        type: string
       username:
         required: true
-        type: string
       ssh:
         required: true
-        type: string
       passphrase:
         required: true
-        type: string
-
 
 jobs:
   deploy:
