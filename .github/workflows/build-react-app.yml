@@ -1,5 +1,7 @@
 name: Build React App
 
+on: workflow_call
+
 jobs:
   build:
     runs-on: ubuntu-latest
