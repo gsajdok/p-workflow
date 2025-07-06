@@ -27,6 +27,5 @@ jobs:
           username: ${{ secrets.username }}
           key: ${{ secrets.key }}
           passphrase: ${{ secrets.passphrase }}
-          source: ""
           target: "frontend-server/"
           strip_components: 1
