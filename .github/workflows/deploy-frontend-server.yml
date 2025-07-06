@@ -1,0 +1,32 @@
+name: Deploy Frontend Server via SCP
+
+on:
+  workflow_call:
+    secrets:
+      host:
+        required: true
+      username:
+        required: true
+      key:
+        required: true
+      passphrase:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Copy repository to server
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.host }}
+          username: ${{ secrets.username }}
+          key: ${{ secrets.key }}
+          passphrase: ${{ secrets.passphrase }}
+          source: ""
+          target: "frontend-server/"
+          strip_components: 1
